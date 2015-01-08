@@ -23,6 +23,7 @@ class CompaniesController < ApplicationController
 
   def show
     @companies = Company.joins(:users_companies).where(users_companies: { user_id: current_user.id })
+    @company = @companies.to_a.find { |company| company.id == params["id"].to_i }
     render :show
   end
 

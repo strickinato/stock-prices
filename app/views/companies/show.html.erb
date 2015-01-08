@@ -1,7 +1,7 @@
 <form id="form-id" action="index.html" method="post">
   <select id='company-selector'>
     <% @companies.each do |company| %>
-    <option value="<%= company.id %>"><%= company.ticker %></option>
+    <option value="<%= company.id %>" <%= "selected" if company.id == @company.id %>><%= company.ticker %></option>
     <% end %>
   </select>
 </form>

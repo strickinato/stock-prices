@@ -1,15 +1,15 @@
 $(document).ready(function() {
-
-  var hello = getPriceJSON(1)
+  $('#company-selector').on('change', getPriceJSON)
 });
 
-var getPriceJSON = function(companyId) {
+var getPriceJSON = function(e) {
+  var companyId = $(e.currentTarget).val()
   var url = "/companies/" + companyId + "/prices"
-    $.ajax({
-      url: url,
-      dataType: 'json',
-      success: function(res) {
-        console.log(res)
-      }
+  $.getJSON(url, function(res){
+    res.forEach(function(price){
+      $("#price-area").append(price.date +" -- $"+ price.price)
+      $("#price-area").append("</br>")
     })
+
+  })
 }

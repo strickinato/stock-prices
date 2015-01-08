@@ -1,5 +1,5 @@
 <form id="form-id" action="index.html" method="post">
-  <select>
+  <select id='company-selector'>
     <% @companies.each do |company| %>
     <option value="<%= company.id %>"><%= company.ticker %></option>
     <% end %>

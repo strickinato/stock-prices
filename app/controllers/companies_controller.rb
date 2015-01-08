@@ -2,8 +2,7 @@ class CompaniesController < ApplicationController
   before_action :require_login
 
   def index
-    @companies = Company.all
-    render :json => @companies
+    @companies = Company.joins(:users_companies).where(users_companies: { user_id: current_user.id })
   end
 
   def new

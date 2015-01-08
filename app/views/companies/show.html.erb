@@ -1,7 +1,3 @@
-<h3>Welcome <%= @current_user.username %></h3>
-
-<%= button_to "Logout", session_url, method: :delete %>
-
 <form id="form-id" action="index.html" method="post">
   <select id='company-selector'>
     <% @companies.each do |company| %>

@@ -1,0 +1,9 @@
+<h3>Welcome <%= @current_user.username %></h3>
+
+<%= button_to "Logout", session_url, method: :delete %>
+
+<ul>
+<% @companies.each do |company|%>
+  <li><a href="/companies/<%= company.id %>"><%= company.ticker %></a></li>
+<% end %>
+</ul>

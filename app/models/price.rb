@@ -1,4 +1,5 @@
 class Price < ActiveRecord::Base
-  belongs_to :company
+  validates :company_id, presence: true
 
+  belongs_to :company
 end

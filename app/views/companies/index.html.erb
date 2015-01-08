@@ -1,5 +1,9 @@
-<ul>
-  <% @companies.each do |company| %>
-    <li><%= company.ticker %></li>
-  <% end %>
-<ul>
+<form id="form_id" action="index.html" method="post">
+  <select>
+    <% @companies.each do |company| %>
+    <option value="<%= company.id %>"><%= company.ticker %></option>
+    <% end %>
+  </select>
+</form>
+
+<div id="price-area"></div>

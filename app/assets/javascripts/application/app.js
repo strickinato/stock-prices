@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 var handleChange = function(e) {
   var companyId = $(e.currentTarget).val()
-  history.pushState({}, "", "/companies/3");
+  history.pushState({}, "", "/companies/" + companyId);
   getPriceJSON(companyId)
 }
 

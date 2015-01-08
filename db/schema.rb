@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108194033) do
+ActiveRecord::Schema.define(version: 20150108195750) do
 
   create_table "companies", force: true do |t|
     t.string "ticker"
+  end
+
+  create_table "prices", force: true do |t|
+    t.integer "company_id", null: false
+    t.date    "date"
+    t.integer "price"
   end
 
   create_table "users", force: true do |t|

@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
-    render :index
+    render :json => @companies
   end
 
   def new
@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @company = Company.find(params[:id])
+    @companies = Company.joins(:users_companies).where(users_companies: { user_id: current_user.id })
     render :show
   end
 

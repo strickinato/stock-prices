@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, :session_token, uniqueness: true
 
+  has_many :users_companies
+  has_many :companies, through: :users_companies
+
   def self.find_by_credentials(username, password)
     user = self.find_by_username(username)
 

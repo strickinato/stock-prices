@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108192018) do
+ActiveRecord::Schema.define(version: 20150108194033) do
 
   create_table "companies", force: true do |t|
     t.string "ticker"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20150108192018) do
     t.string "username",        null: false
     t.string "password_digest", null: false
     t.string "session_token",   null: false
+  end
+
+  create_table "users_companies", force: true do |t|
+    t.integer "user_id",    null: false
+    t.integer "company_id", null: false
   end
 
 end

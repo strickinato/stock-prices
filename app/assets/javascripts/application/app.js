@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('ready page:load', function(){
   $('#company-selector').on('change', handleChange)
 
   getPriceJSON($('#company-selector').val())
